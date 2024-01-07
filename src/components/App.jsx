@@ -53,11 +53,10 @@ class App extends Component {
 				<h1>Phonebook</h1>
 				<ContactForm addContact={addContact} />
 				<h2>Contacts</h2>
-				<Filter findContact={findContact} />
-				<ContactList
-					filteredContact={filteredContact}
-					deleteContact={deleteContact}
+				<Filter
+					findContact={findContact}
 				/>
+				<ContactList filteredContact={filteredContact()} deleteContact={deleteContact} />
 			</div>
 		);
 	}
