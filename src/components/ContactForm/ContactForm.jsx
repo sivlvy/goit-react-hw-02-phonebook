@@ -2,6 +2,22 @@ import css from './ContactForm.module.css';
 import { Component } from 'react';
 
 class ContactForm extends Component {
+
+	state = {
+		name: '',
+		number: '',
+	}
+
+	handleChange = ({target: {name, value}}) => {
+		this.setState({[name]: value})
+	}
+
+	handleSubmit = e => {
+		e.preventDefault();
+		this.props.addContact({...this.state})
+		e.target.reset()
+	}
+
 	render() {
 		return (
 			<form className={css.form} onSubmit={this.handleSubmit}>
